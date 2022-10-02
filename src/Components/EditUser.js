@@ -2,7 +2,7 @@
 
 
 
-export default function editUser() {
+export default function EditUser() {
 
  // return ()
 }
