@@ -86,29 +86,3 @@ export default function LoginPage() {
   </div>
  )
 }
-
-  // <Form className='loginForm' onSubmit={handleSubmit}>
-  //   <Form.Group className="mb-3" controlId="formUsername">
-  //   <Form.Label>Username</Form.Label>
-  //   <Form.Control 
-  //             type="text" 
-  //             required="required" 
-  //             placeholder="Enter Username" 
-  //             maxLength={50}/>
-  //             {/* // onChange={(e) => setTitle(e.target.value)}
-  //             // value={title} */}
-  //   </Form.Group>
-  //   <Form.Group className="mb-3" controlId="formPassword">
-  //   <Form.Label>Password</Form.Label>
-  //   <Form.Control 
-  //             type="text" 
-  //             required="required" 
-  //             placeholder="Enter Password" 
-  //             maxLength={50}/>
-  //             {/* // onChange={(e) => setTitle(e.target.value)}
-  //             // value={title} */}
-  //   </Form.Group>
-  //   <Button className='submit-button' variant="primary" type="submit">
-  //          Login
-  //   </Button>
-  // </Form>
