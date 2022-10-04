@@ -1,0 +1,33 @@
+.home-search {
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    background-color: #ddcfb4;
+
+   }
+
+.search {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 400px;
+    height:35px;
+}
+
+button {
+    background-color: #91bbc4;
+    color: #173437;
+    border-radius: 20px;
+}
+
+.image {
+    height: 35%;
+    width: 500px;
+}

@@ -1,0 +1,13 @@
+.App {
+    text-align: center;
+    background-color: #91bbc4;
+  }
+
+.App-nav {
+    padding: 5px;
+}
+
+.navItem {
+    padding: 10px;
+    color: #173437;
+}
