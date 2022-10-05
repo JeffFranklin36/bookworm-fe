@@ -12,6 +12,12 @@ const SearchedBooks = () => {
     const {favorites, addToFavorites, removeFromFavorites} = useAppContext();
 
 
+    const favoritesChecker = (id) => {
+        const boolean = favorites.some((book) => book.id === id);
+        return boolean;
+    }
+
+
         useEffect(() => {
             axios
                 .get(API_URL)
@@ -35,7 +41,13 @@ const SearchedBooks = () => {
                         <img src={volumeInfo.imageLinks} alt="#"/>
                     </div>
                     <div>
-                        <button>Add to Favorites</button>
+                        {favoritesChecker(book.id) ? (
+                            <button onClick={()=> removeFromFavorites(book.id)}>Remove From Favorites</button>
+                        ) : (
+                            <button onClick={()=> addToFavorites(book)}>Add to Favorites</button>
+                        )
+                    }
+                        
                     </div>
 
                 </div>
