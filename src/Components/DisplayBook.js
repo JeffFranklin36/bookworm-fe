@@ -1,8 +1,11 @@
+import React from 'react'
+import "../App.css"
 
 
-
-
-export default function DisplayBook() {
-
- // return ()
+const DisplayBook = () => {
+    return (
+        <div>DisplayBook</div>
+    )
 }
+
+export default DisplayBook
