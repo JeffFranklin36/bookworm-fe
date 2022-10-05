@@ -7,7 +7,7 @@ import './App.css';
 //components
 import HomeSearch from './Components/HomeSearch';
 import Login from './Components/Login';
-import Signup from './Components/SignupPage';
+import Signup from './Components/Signup';
 import UserProfile from './Components/UserProfile';
 import DisplayBook from './Components/DisplayBook';
 import SearchedBooks from './Components/SearchedBooks';
