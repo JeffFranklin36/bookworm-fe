@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import ReactDOM from "react-dom"
+
 
 import "../Components/loginForm.css"
 
-export default function LoginPage() {
+export default function Login() {
 
  const [errorMessages, setErrorMessages] = useState({});
  const [isSubmitted, setIsSubmitted] = useState(false);
@@ -21,11 +21,10 @@ export default function LoginPage() {
  ];
  
  const errors = {
-  unameOrPassword: "invalid username or password"
+  unameOrPassword: "Invalid username or password"
  };
  
  const handleSubmit = (event) => {
-   //Prevent page reload
    event.preventDefault();
  
    let { uname, pass } = document.forms[0];
