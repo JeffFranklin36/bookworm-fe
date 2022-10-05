@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 
 import "../Components/loginForm.css"
+import bookImg from '../svg/undraw_Book_reading_re_fu2c.png';
 
 export default function Login() {
 
@@ -78,10 +79,12 @@ export default function Login() {
 
  return (
   <div className="login">
-   <div className="login-form">
-     <div className="title">Sign In</div>
-     {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
-   </div>
+    <div className="login-form">
+      <div className="title">Bookworm</div>
+      <div className="logo"><img className='image' src={bookImg} alt="Book image"/></div>
+      <div className="title">Sign In</div>
+      {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+    </div>
   </div>
  )
 }
