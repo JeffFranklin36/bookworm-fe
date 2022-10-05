@@ -8,7 +8,7 @@ import Nav from 'react-bootstrap/Nav'
 
 //components
 import HomeSearch from './Components/HomeSearch';
-import Login from './Components/LoginPage';
+import Login from './Components/Login';
 import Signup from './Components/SignupPage';
 import UserProfile from './Components/UserProfile';
 import DisplayBook from './Components/DisplayBook';
