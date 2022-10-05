@@ -10,14 +10,20 @@ export const useAppContext = () => {
     if(context === undefined){
         throw new Error('AppContext must be within appContextProvider')
     }
+
+    return context;
 }
 
 
 const AppContextProvider = ({children}) => {
     const [favorites,setFavorites] = useState([])
 
-    const addToFavorites = () => {
+    const addToFavorites = (book) => {
+        const oldFavorites = [...favorites];
 
+        const newFavorites = oldFavorites.concat(book);
+
+        setFavorites(newFavorites);
     }
 
     const removeFromFavorites = (id) => {
@@ -31,4 +37,7 @@ const AppContextProvider = ({children}) => {
             {children}
         </AppContextProvider>
     )
-}
+};
+
+
+export default AppContextProvider;

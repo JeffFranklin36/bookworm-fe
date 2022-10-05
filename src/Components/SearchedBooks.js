@@ -2,11 +2,14 @@ import React, {useState, useEffect} from 'react'
 import "../App.css"
 import { API_URL } from '../API';
 import axios from 'axios';
+import { useAppContext } from './context/app.context'
 
 
 const SearchedBooks = () => {
 
-        const [volumeInfo, setVolumeInfo] = useState([]);
+    const [volumeInfo, setVolumeInfo] = useState([]);
+
+    const {favorites, addToFavorites, removeFromFavorites} = useAppContext();
 
 
         useEffect(() => {
