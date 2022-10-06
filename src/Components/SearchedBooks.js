@@ -1,8 +1,13 @@
+import React from 'react';
 
 
 
+const SearchedBooks = () => {
+    return (
+        <div className="list">
 
-export default function SearchedBook() {
-
- // return ()
+        </div>
+    )
 }
+
+export default SearchedBooks
