@@ -3,6 +3,7 @@ import "../App.css"
 import { API_URL } from '../API';
 import axios from 'axios';
 import { useAppContext } from './context/app.context'
+import {useNavigate} from 'react-router-dom';
 
 
 const SearchedBooks = () => {
@@ -10,6 +11,8 @@ const SearchedBooks = () => {
     const [volumeInfo, setVolumeInfo] = useState([]);
 
     const {favorites, addToFavorites, removeFromFavorites} = useAppContext();
+
+    const navigate = useNavigate();
 
 
     const favoritesChecker = (id) => {
@@ -38,7 +41,7 @@ const SearchedBooks = () => {
                         <h5>{volumeInfo.authors}</h5>
                     </div>
                     <div>
-                        <img src={volumeInfo.imageLinks} alt="#"/>
+                        <img src={volumeInfo.imageLinks} alt="#" onClick={()=>navigate(`/getBook/${book.id}`)}/>
                     </div>
                     <div>
                         {favoritesChecker(book.id) ? (
