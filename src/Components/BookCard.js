@@ -2,6 +2,8 @@ import React from 'react';
 // import { useAppContext } from './context/app.context'
 import {useNavigate} from 'react-router-dom';
 
+import '../Home.css'
+
 
 
 const BookCard = (props) => {
@@ -13,9 +15,11 @@ const BookCard = (props) => {
     //     return boolean;
     // }
 
+    const navigate = useNavigate();
+
     return (
         <div className="card-container">
-            <img src={props.image} alt=""/>
+            <img src={props.image} alt="" onClick={()=>navigate(`/getBook/${props.id}`)}/>
             <div className="desc">
                 <h3>{props.title}</h3>
                 <h5>Author: {props.author}</h5>
