@@ -18,7 +18,7 @@ const BookCard = (props) => {
             <img src={props.image} alt=""/>
             <div className="desc">
                 <h3>{props.title}</h3>
-                <h5>{props.author}</h5>
+                <h5>Author: {props.author}</h5>
                 <p>Published {props.published}</p>
                 {/* <div>
                         {favoritesChecker(book.id) ? (
