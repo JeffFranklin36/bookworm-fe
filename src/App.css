@@ -11,3 +11,13 @@
     padding: 10px;
     color: #173437;
 }
+
+.list {
+    min-height: 5vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    text-align: center;
+    background-color: #ddcfb4;
+}

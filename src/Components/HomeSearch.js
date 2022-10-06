@@ -4,6 +4,7 @@ import React, {useState,useEffect, Component} from 'react';
 import bookImg from '../svg/undraw_Book_reading_re_fu2c.png';
 import SearchArea from './SearchArea';
 import request from 'superagent';
+import SearchedBooks from './SearchedBooks';
 
 
 import '../Home.css'
