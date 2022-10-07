@@ -32,3 +32,19 @@ button {
     width: 500px;
     margin: 30px;
 }
+
+.display-book {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    background-color: #ddcfb4;
+}
+
+.list {
+    background-color: #ddcfb4; 
+    height: 100%;
+    width: 100%;
+}
