@@ -23,7 +23,7 @@ const BookCard = (props) => {
             <div className="desc">
                 <h3>{props.title}</h3>
                 <h5>Author: {props.author}</h5>
-                <p>Published {props.published}</p>
+                <p>Published Date: {props.published === '0000' ? 'Not Available' : props.puplished.substring(0, 4)}</p>
                 {/* <div>
                         {favoritesChecker(book.id) ? (
                             <button onClick={()=> removeFromFavorites(book.id)}>Remove From Favorites</button>

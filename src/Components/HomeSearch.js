@@ -15,7 +15,8 @@ class HomeSearch extends Component {
         super(props);
         this.state = {
             books: [],
-            searchField: ''
+            searchField: '',
+            sort: ''
         }
     }
 
@@ -25,22 +26,56 @@ class HomeSearch extends Component {
             .get("https://www.googleapis.com/books/v1/volumes")
             .query({ q: this.state.searchField })
             .then((data) => {
-                this.setState({ books: [...data.body.items]})
+                const cleanData = this.cleanData(data)
+                this.setState({ books: cleanData })
+                // [...data.body.items]
             })
     }
 
     handleSearch = (e) => {
         this.setState({ searchField: e.target.value })
     }
+
+    handleSort = (e) => {
+        this.setState({ sort: e.target.value })
+    }
+
+
+    cleanData = (data) => {
+        const cleanedData = data.body.items.map((book) => {
+            if(book.volumeInfo.hasOwnProperty('publishedDate') === false) {
+                book.volumeInfo['publishedDate'] = '0000';
+            }
+
+            else if(book.volumeInfo.hasOwnProperty('imageLinks') === false) {
+                book.volumeInfo['imageLinks'] = { thumbnail: "https://www.freeiconspng.com/uploads/no-image-icon-6.png" }
+                //image from https://www.freeiconspng.com/img/23485"
+            }
+
+            return book;
+        })
+
+        return cleanedData
+    }
+
+
 render() {
+    const sortedBooks = this.state.books.sort((a, b) => {
+        if(this.state.sort === 'Newest') {
+            return parseInt(b.volumeInfo.publishedDate.substring(0, 4)) - parseInt(a.volumeInfo.publishedDate.substring(0, 4))
+        }
+        else if(this.state.sort === 'Oldest') {
+            return parseInt(a.volumeInfo.publishedDate.substring(0, 4)) - parseInt(b.volumeInfo.publishedDate.substring(0, 4))
+        }
+    })
+
     return (
         <div className="home-search">
             <img className='image' src={bookImg} alt="Book image"/>
             <h1 className='title'>Bookworm</h1>
-            <SearchArea searchBook={this.searchBook} handleSearch={this.handleSearch}/>
-            <button>Surprise me!</button>
+            <SearchArea searchBook={this.searchBook} handleSearch={this.handleSearch} handleSort={this.handleSort}/>
             <h3>Library in your pocket, Search your favorite books or find something new!</h3>
-            <SearchedBooks books={this.state.books} />
+            <SearchedBooks books={sortedBooks} />
          </div>
     )
 }
