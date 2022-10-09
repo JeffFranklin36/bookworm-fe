@@ -13,6 +13,10 @@ import Signup from './Components/Signup';
 import UserProfile from './Components/UserProfile';
 import SearchedBooks from './Components/SearchedBooks';
 import EditUser from './Components/EditUser';
+import Logout from './Components/Logout'
+
+//utils
+import PrivateRoutes from './utils/PrivateRoutes';
 
 function App() {
 
@@ -35,15 +39,20 @@ function App() {
               <Nav.Item className="navItem">
                 <Link to="/login">Login</Link>
               </Nav.Item>
-              
+              <Nav.Item className="navItem">
+                <Link to="/logout">Logout</Link>
+              </Nav.Item>
             </Nav>
           </Container>
       </nav>
       <div className="display">
-        <Routes>
+        <Routes >
           <Route path ='/' element={<HomeSearch/>}/>
           <Route path ='/signup' element={<Signup/>} />
-          <Route path ='/userProfile/:id' element={<UserProfile/>}/>
+          <Route element={<PrivateRoutes/>}>
+            <Route path ='/userProfile/:id' element={<UserProfile/>}/>
+            <Route path='/logout' element={<Logout/>}></Route>
+          </Route>
           <Route path ='/searchedBooks/:id' element={<SearchedBooks/>} />
           <Route path ='/updateUser/:id' element={<EditUser/>} />
           <Route path ='/login' element={<Login/>}/>
