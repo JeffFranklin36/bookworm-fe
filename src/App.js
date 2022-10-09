@@ -11,7 +11,6 @@ import HomeSearch from './Components/HomeSearch';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
 import UserProfile from './Components/UserProfile';
-import DisplayBook from './Components/DisplayBook';
 import SearchedBooks from './Components/SearchedBooks';
 import EditUser from './Components/EditUser';
 
@@ -42,7 +41,6 @@ function App() {
       <div className="display">
         <Routes>
           <Route path ='/' element={<HomeSearch/>}/>
-          <Route path ='/getBook/:id' element={<DisplayBook/>}/>
           <Route path ='/signup' element={<Signup/>} />
           <Route path ='/userProfile/:id' element={<UserProfile/>}/>
           <Route path ='/searchedBooks/:id' element={<SearchedBooks/>} />

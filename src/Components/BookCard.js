@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 // import { useAppContext } from './context/app.context'
-import {useNavigate} from 'react-router-dom';
+import axios from 'axios'
 
 import '../Home.css'
 
@@ -8,30 +8,48 @@ import '../Home.css'
 
 const BookCard = (props) => {
 
-    // const {favorites, addToFavorites, removeFromFavorites} = useAppContext();
+    // const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
 
-    // const favoritesChecker = (id) => {
-    //     const boolean = favorites.some((book) => book.id === id);
-    //     return boolean;
-    // }
+    // useEffect(() => {
+    //     return () => saveBookIds(savedBookIds);
+    //   });
 
-    const navigate = useNavigate();
+    // const handleSaveBook = async (bookId) => {
+    //     const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
+    //     const token = Auth.loggedIn() ? Auth.getToken() : null;
+    
+    //     if (!token) {
+    //       return false;
+    //     }
+    
+    //     try {
+    //       const { data } = await saveBook({
+    //         variables: { newBook: { ...bookToSave } },
+    //       });
+    
+    //       setSavedBookIds([...savedBookIds, bookToSave.bookId]);
+    //     } catch (err) {
+    //       console.error(err);
+    //     }
+    //   };
 
     return (
         <div className="card-container">
-            <img src={props.image} alt="" onClick={()=>navigate(`/getBook/${props.id}`)}/>
+            <img src={props.image} alt="" />
             <div className="desc">
+            <button className="save-button">
+                Save button
+            {/* disabled={savedBookIds?.some((savedBookId) => savedBookId === book.bookId)}
+                      className='btn-block btn-info'
+                      onClick={() => handleSaveBook(book.bookId)}>
+                      {savedBookIds?.some((savedBookId) => savedBookId === book.bookId)
+                        ? 'This book has already been saved!'
+                        : 'Save this Book!'} */}
+            </button>
                 <h3>{props.title}</h3>
                 <h5>Author: {props.author}</h5>
-                <p>Published Date: {props.published === '0000' ? 'Not Available' : props.puplished.substring(0, 4)}</p>
-                {/* <div>
-                        {favoritesChecker(book.id) ? (
-                            <button onClick={()=> removeFromFavorites(book.id)}>Remove From Favorites</button>
-                        ) : (
-                            <button onClick={()=> addToFavorites(book)}>Add to Favorites</button>
-                        )
-                    }
-                </div> */}
+                <p>Published Date: {props.published === '0000' ? 'Not Available' : props.published.substring(0, 4)}</p>
+                <h5>Description: {props.desc}</h5>
             </div>
         </div>
     )

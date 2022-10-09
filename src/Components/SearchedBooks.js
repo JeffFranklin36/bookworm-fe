@@ -17,6 +17,7 @@ const SearchedBooks = (props) => {
                             title={book.volumeInfo.title}
                             author={book.volumeInfo.authors}
                             published={book.volumeInfo.publishedDate}
+                            desc={book.volumeInfo.description}
                             id={book.id}
                             /> 
                 })
