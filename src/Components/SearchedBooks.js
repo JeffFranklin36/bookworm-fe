@@ -1,6 +1,8 @@
 import React from 'react';
 import BookCard from './BookCard'
 
+import '../Home.css'
+
 
 
 const SearchedBooks = (props) => {
@@ -8,12 +10,15 @@ const SearchedBooks = (props) => {
         <div className="list">
             {
                 props.books.map((book, i) => {
+                    console.log("book", book)
                    return <BookCard 
                             key={i}
                             image={book.volumeInfo.imageLinks.thumbnail}
                             title={book.volumeInfo.title}
                             author={book.volumeInfo.authors}
                             published={book.volumeInfo.publishedDate}
+                            desc={book.volumeInfo.description}
+                            id={book.id}
                             /> 
                 })
             }

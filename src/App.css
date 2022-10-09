@@ -13,10 +13,10 @@
 }
 
 .list {
-    min-height: 5vh;
-    width: 100%;
+    min-height: 40vh;
+    width: 100vh;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2);
     justify-items: center;
     text-align: center;
     background-color: #ddcfb4;

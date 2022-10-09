@@ -21,14 +21,58 @@
     height:35px;
 }
 
-button {
+.search-button{
     background-color: #91bbc4;
     color: #173437;
     border-radius: 20px;
+    border:none;
+    height: 35px;
+    width: 90px;
+
+}
+
+
+.sort-button {
+    background-color: #91bbc4;
+    color: #173437;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.save-button {
+    background-color: #91bbc4;
+    color: #173437;
+    border-radius: 20px;
+    margin: 10px;
 }
 
 .image {
     height: 35%;
     width: 500px;
-    margin: 30px;
+    margin-top: 300px;
 }
+
+.list {
+    background-color: #ddcfb4; 
+    height: 800vh;
+    width: 100%;
+    
+}
+
+.desc-title {
+    font-weight: bold;
+}
+
+.description {
+    padding-left: 200px;
+    padding-right: 200px;
+    font-size:18px;
+    padding-bottom:40px
+}
+
+.card-container{
+    background-color: #ddcfb4; 
+    height: 100%;
+    width: 100%;
+}
+
