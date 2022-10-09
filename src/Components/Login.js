@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 
 import "../Components/loginForm.css"
@@ -6,53 +7,75 @@ import bookImg from '../svg/undraw_Book_reading_re_fu2c.png';
 
 export default function Login() {
 
- const [errorMessages, setErrorMessages] = useState({});
+ const [error, setError] = useState('');
  const [isSubmitted, setIsSubmitted] = useState(false);
-  
- // Mock User Login info
-  const database = [
-   {
-     username: "user1",
-     password: "pass1"
-   },
-   {
-     username: "user2",
-     password: "pass2"
-   }
- ];
- 
- const errors = {
-  unameOrPassword: "Invalid username or password"
- };
- 
- const handleSubmit = (event) => {
+ const [username, setUsername] = useState('')
+ const [password, setPassword] = useState('')
+
+
+ const navigate = useNavigate()
+   
+ const handleSubmit = async (event) => {
    event.preventDefault();
- 
-   let { uname, pass } = document.forms[0];
- 
-   // Find user login info
-   const userData = database.find((user) => user.username === uname.value);
- 
-   // Compare user info
-   if (userData) {
-     if (userData.password !== pass.value) {
-       // Invalid password
-       setErrorMessages({ name: "unameOrPassword", message: errors.unameOrPassword });
-     } else {
-       setIsSubmitted(true);
+
+
+
+   let user = {
+    "username": username,
+    "password": password
+  }
+
+  console.log('user--->', user)
+  console.log(username)
+  console.log(password)
+   const URL = `${process.env.REACT_APP_BACKEND_URL}/user/login`
+   const response = await fetch(URL, {
+     method: 'POST',
+     body: JSON.stringify(user),
+     headers: {
+       'Content-Type': 'application/json'
      }
-   } else {
-     // Username not found
-     setErrorMessages({ name: "unameOrPassword", message: errors.unameOrPassword });
+   })
+   const data = await response.json()
+
+   if (!response.ok) {
+     setError(data.error)
    }
- };
+   if (response.ok) {
+     localStorage.setItem('token', data.token)
+     setError(null)
+     setUsername('')
+     setPassword('')
+     console.log('Successfully Logged in:', data)
+     navigate('/')
+   }
+ }
+ 
+//    let { uname, pass } = document.forms[0];
+ 
+//    // Find user login info
+//    const userData = database.find((user) => user.username === uname.value);
+ 
+//    // Compare user info
+//    if (userData) {
+//      if (userData.password !== pass.value) {
+//        // Invalid password
+//        setErrorMessages({ name: "unameOrPassword", message: errors.unameOrPassword });
+//      } else {
+//        setIsSubmitted(true);
+//      }
+//    } else {
+//      // Username not found
+//      setErrorMessages({ name: "unameOrPassword", message: errors.unameOrPassword });
+//    }
+//  };
 
  
  // Generate JSX code for error message
- const renderErrorMessage = (name) =>
- name === errorMessages.name && (
-  <div className="error">{errorMessages.message}</div>
-  );
+//  const renderErrorMessage = (name) =>
+//  name === errorMessages.name && (
+//   <div className="error">{errorMessages.message}</div>
+//   );
 
   // JSX code for login form
  const renderForm = (
@@ -60,13 +83,21 @@ export default function Login() {
    <form onSubmit={handleSubmit}>
      <div className="input-container">
        <label>Username </label>
-       <input type="text" name="uname" required />
+       <input
+        type="text"
+        name="username"
+        onChange={(e) => setUsername(e.target.value)}
+        required />
      </div>
      <div className="input-container">
        <label>Password </label>
-       <input type="password" name="pass" required />
+       <input
+        type="password"
+        name="password"
+        onChange={(e) => setPassword(e.target.value)}
+        required />
      </div>
-     {renderErrorMessage("unameOrPassword")}
+     {/* {renderErrorMessage("unameOrPassword")} */}
      <div className="button-container">
        <input type="submit" />
      </div>

@@ -25,7 +25,7 @@ export default function Signup() {
     "password": password
   }
   console.log('user--->', user)
-   const URL = "http://localhost:8080/user/new"
+   const URL = `${process.env.REACT_APP_BACKEND_URL}/user/new`
    const response = await fetch(URL, {
      method: 'POST',
      body: JSON.stringify(user),
