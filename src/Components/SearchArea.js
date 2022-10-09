@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../Home.css'
+
 const SearchArea = (props) => {
     return(
         <div className="search-area">

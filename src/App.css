@@ -13,8 +13,8 @@
 }
 
 .list {
-    min-height: 10vh;
-    width: 100%;
+    min-height: 40vh;
+    width: 100vh;
     display: grid;
     grid-template-columns: repeat(2);
     justify-items: center;

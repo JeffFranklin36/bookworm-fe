@@ -10,7 +10,7 @@ const SearchedBooks = (props) => {
         <div className="list">
             {
                 props.books.map((book, i) => {
-                    console.log("book",book)
+                    console.log("book", book)
                    return <BookCard 
                             key={i}
                             image={book.volumeInfo.imageLinks.thumbnail}

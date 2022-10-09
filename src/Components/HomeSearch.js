@@ -1,6 +1,4 @@
-// import { API_URL } from '../API';
 import React, {useState,useEffect, Component} from 'react';
-// import axios from 'axios'
 import bookImg from '../svg/undraw_Book_reading_re_fu2c.png';
 import SearchArea from './SearchArea';
 import request from 'superagent';
