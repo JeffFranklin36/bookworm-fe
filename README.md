@@ -1,3 +1,22 @@
+BOOKWORM - Discover something new! Find your next adventure with Bookworm! Here, useres are able to browse 100's of different books. Search by genre, author or title. There is something for everyone! Save your favoites and track what you've already read by creating a profile page.
+
+Backend github link: https://github.com/SarahWiedrich/Bookworm-BE
+
+MERN App created by 
+
+Front end:
+Graham O'Connell-Gibbs https://github.com/Graham724
+Jeff Franklin https://github.com/JeffFranklin36
+
+Back End:
+
+Sarah Wiedrich https://github.com/SarahWiedrich
+Edward Ziemba https://github.com/esziemba
+
+# Dependencies Installed for the Frontend of this Project.
+
+npm install react-bootstrap, react-dom,react-router-dom, superagent, axios
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
