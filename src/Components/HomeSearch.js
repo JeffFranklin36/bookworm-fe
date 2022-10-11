@@ -26,7 +26,6 @@ class HomeSearch extends Component {
             .then((data) => {
                 const cleanData = this.cleanData(data)
                 this.setState({ books: cleanData })
-                // [...data.body.items]
             })
     }
 
