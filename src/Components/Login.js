@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 
-import "../Components/loginForm.css"
+import "../loginForm.css"
 import bookImg from '../svg/undraw_Book_reading_re_fu2c.png';
 
 export default function Login() {
