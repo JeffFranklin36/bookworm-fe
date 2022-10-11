@@ -6,8 +6,8 @@ export default function Navbar() {
  let location = useLocation()
  let haveToken = localStorage.getItem('token') !== ''
  let display 
- 
- if(haveToken === true){
+
+if(haveToken === true){
   display = (
   <nav className='App-nav'>
   <Container>
@@ -16,7 +16,7 @@ export default function Navbar() {
             <Link to="/">Home</Link>
           </Nav.Item>
           <Nav.Item className="navItem">
-            <Link to="/userProfile/:id">Profile</Link>
+            <Link to={`/userProfile/`}>Profile</Link>
           </Nav.Item>
           <Nav.Item className="navItem">
             <Link to="/logout">Logout</Link>

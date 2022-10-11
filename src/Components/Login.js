@@ -43,6 +43,7 @@ export default function Login() {
    }
    if (response.ok) {
      localStorage.setItem('token', data.token)
+     localStorage.setItem('id', data.user._id)
      setError(null)
      setUsername('')
      setPassword('')
