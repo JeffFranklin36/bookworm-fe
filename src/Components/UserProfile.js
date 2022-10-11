@@ -4,11 +4,11 @@ import { useNavigate, BrowserRouter as Router, Link, Route, Routes, useParams } 
 
 //React-Bootstrap components
 import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col';
 
-import "../Components/loginForm.css"
+import bookImg from '../svg/undraw_Book_reading_re_fu2c.png';
+
+
+import "../Profile.css"
 
 export default function UserProfile () {
  const [user, setUser] = useState([])
@@ -40,9 +40,12 @@ console.log(userRequest)
 
  const display = (
 
-      <div>
-        <img src={user.profilePic}/>
-         <p>{user.name}</p>
+      <div className='profile-page'>
+        <div className='namePic'>
+          {/* <img alt='Profile Picture' src={user.profilePic}/> */}
+          <img alt='Profile Picture' src={bookImg}/>
+          <h1>{user.name}</h1>
+        </div>
         <div className="button-container">
         </div>
       </div>
