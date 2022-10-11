@@ -1,0 +1,18 @@
+.profile-page {
+ font-family: sans-serif;
+ height: 100vh;
+ font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+ background-color: #ddcfb4;
+}
+
+.namePic {
+ display: flex;
+ align-items: flex-start;
+ flex-direction: column;
+ gap: 20px;
+ padding: 50px;
+}
+
+.namePic img {
+ width: 30%;
+}
