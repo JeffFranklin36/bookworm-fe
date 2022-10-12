@@ -12,6 +12,7 @@ export default function Signup() {
  const [name, setName] = useState('')
  const [username, setUsername] = useState('')
  const [password, setPassword] = useState('')
+ const [bio, setBio] = useState('')
 
  const [error, setError] = useState('')
  const navigate = useNavigate()
@@ -22,8 +23,10 @@ export default function Signup() {
    let user = {
     "name": name,
     "username": username,
-    "password": password
+    "password": password,
+    "bio": bio
   }
+
   console.log('user--->', user)
    const URL = `${process.env.REACT_APP_BACKEND_URL}/user/new`
    const response = await fetch(URL, {
@@ -43,6 +46,7 @@ export default function Signup() {
      setName('')
      setUsername('')
      setPassword('')
+     setBio('')
      console.log('new user added:', data)
      navigate('/')
    }
@@ -79,12 +83,25 @@ export default function Signup() {
      <div className="input-container">
        <label>Password</label>
        <input 
-          type="text"
-          name="name"
+          type="password"
+          name="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
           placeholder="Enter Password"
           maxLength={20}
+          required /> 
+     </div>
+     <div className="input-container">
+       <label>Bio</label>
+       <input 
+          type="bio"
+          name="bio"
+          onChange={(e) => setBio(e.target.value)}
+          value={bio}
+          as="textarea" 
+          rows={3}
+          placeholder="Enter Short Bio"
+          maxLength={280}
           required /> 
      </div>
      <div className="button-container">

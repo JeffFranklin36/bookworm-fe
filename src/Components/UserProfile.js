@@ -43,7 +43,7 @@ console.log(userRequest)
       <div className='profile-page'>
         <div className='namePic'>
           {/* <img alt='Profile Picture' src={user.profilePic}/> */}
-          <img alt='Profile Picture' src={bookImg}/>
+          <img alt='Avatar' src={bookImg}/>
           <h1>{user.name}</h1>
         </div>
         <div className="button-container">
